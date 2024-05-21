@@ -1,0 +1,82 @@
+header{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+header .main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+header .main .logosearch{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: flex-start;
+    align-items: center;
+   
+}
+.logo{
+    width: 150px;
+}
+.search{
+    background-color: #EEEEEE;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+header .main .logosearch input{
+    width: 500px;
+    padding: 0 10px;
+    background-color: #EEEEEE;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 15px 0 0px 15px;
+}
+
+header .main .logosearch .search button{
+    cursor: pointer;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 0 15px 15px 0;
+ 
+}
+header .main .logosearch .mobilemenu{
+    display: none;
+}
+header .main .profile{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+header .main .profile button{
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #60EFB8;
+    border-radius: 15px;
+    
+}
+header .main .profile button:hover{
+    background-color:#60EFB8;
+}
+nav .navigation{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    padding: 20px 0;
+}
+nav .navigation .item{
+    text-decoration: none;
+    color: #204969;
+}
+nav .navigation a:hover{
+    color: #60EFB8;
+}

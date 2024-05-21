@@ -1,0 +1,53 @@
+header{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+header .main .logosearch{
+    display: flex;
+    flex-direction: column;
+}
+header .main .logosearch .logomenu{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+header .main .logosearch .search{
+    width: 85%;
+    margin: 0 auto;
+    background-color: #EEEEEE;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+header .main .logosearch .search input{
+    width: 80%;
+    padding: 0 10px;
+    background-color: #EEEEEE;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 15px 0 0px 15px;
+}
+header .main .logosearch .search button{
+    cursor: pointer;
+    border: none;
+    padding: 5px;
+    border-radius: 0 15px 15px 0;
+ 
+}
+header .main .profile{
+    display: none;
+}
+nav{
+    display: none;
+}
+.logo{
+    width: 90px;
+}
