@@ -4,6 +4,8 @@ header{
     display: flex;
     flex-direction: column;
     padding: 20px;
+    /* position:fixed; */
+    
 }
 
 header .main{
@@ -71,7 +73,7 @@ nav .navigation{
     display: flex;
     flex-direction: row;
     gap: 25px;
-    padding: 20px 0;
+    padding: 20px 0 0 0;
 }
 nav .navigation .item{
     text-decoration: none;

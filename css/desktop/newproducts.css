@@ -1,0 +1,76 @@
+.newcollections{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.newcollections h2{
+    text-align: center;
+    padding: 20px 0;
+    font-size: 40px;
+    color: #0c3758;
+
+}
+
+.newcollections .new{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-flow: row nowrap;
+
+    padding: 25px;
+}
+.newcollections .new .poster{
+    width: 40%;
+    background-image: url(/public/images/grid1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+ .newcollections .new .collections{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 60%;
+ }
+ .newcollections .new .collections .collection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+ }
+ .newcollections .new .collections .collection img{
+    width:80% ;
+    height: 80%;
+    border-radius: 5px;
+    transition: 300ms;
+   
+    
+ }
+ .newcollections .new .collections .collection img:hover{
+    transform: scale(90%);
+    cursor: pointer;
+
+ }
+ .newcollections .new .collections .collection .title{
+    font-size: small;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-left: 5px;
+    padding-top: 5px;
+
+ }
+ .newcollections .new .collections .collection .description{
+    font-size: x-small;
+    padding-left: 5px;
+    padding-top: 5px;
+ }
+ .newcollections .new .collections .collection .price{
+    font-weight: 400;
+    padding-left: 5px;
+    padding-top: 5px;
+ }

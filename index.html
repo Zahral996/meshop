@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Me Shop</title>
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/png" href="./public/images/logosmile.png">
 </head>
 <body>
-    <header>
+    <!--start website-->
+    <div class="wrapper">
+      <!--header-->
+      <header>
         <div class="main">
             <div class="logosearch">
                 <div class="logomenu">
@@ -56,37 +60,105 @@
                 <a class="item" href="#">Contact Us</a>
             </div>
         </nav>
-    </header>
-    <div class="products">
-    
-      
+      </header>
+    <!--end of header-->
+        
 
-    </div>
+    <!--start of slider-->
+      <div class="slider">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img class="image1" src="./public/images/slider1.jpg" alt="">
+                    <div class="content1">
+                        <div class="text1">
+                            <p>discover the one's sunset collection</p>
+                            <h2>one with the sun</h2>
+                            <button class="btn">shop now</button>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img class="image2" src="./public/images/slider2.jpg" alt="">
+                    <div class="content2">
+                        <div class="text2">
+                            <h3>Follow your dreams</h3>
+                            <button class="btn">shop now</button>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img class="image3" src="./public/images/slider3.jpg" alt="">
+                    <div class="content3">
+                        <div class="text3">
+                          <h4>buy</h4>
+                          <h4>whatever</h4>
+                          <h4>you</h4>
+                          <h4>want!</h4>
+              
+                            <!-- <button class="btn">buy</button> -->
+                        </div>
+                    </div>
+                  </div>
+                </div>
+      </div>
+     
+      </div>
+    <!--end of slider-->
 
-<script>
-    async function allData(){
-        let data = await fetch("https://fakestoreapi.com/products");
-        let dataget = await data.json()
-        let res = await dataget.map((item)=>{
-            return `  <div class="product">
-            <h2>${item.title}</h2>
-            <img src="${item.image}" alt="">
-            <p>${item.description}</p>
-            <div class="price">price:${item.price}</div>
-            <p>category:${item.category}</p>
-            <div class="rate">
-                <span>rate:${item.rating.rate}</span>
-                <span>count:${item.rating.count}</span>
+     <!--start of new products-->
+      <div class="newcollections">
+        <h2>What's New</h2>
+        <div class="new">
+          <div class="poster">
+          </div>
+          <div class="collections">
+            <!-- <div class="collection">
+              <img src="./public/images/grid2.jpg" alt="">
+              <p class="title">the one</p>
+              <p class="description">Strapless midi dress. Contrast pleated fabric appliqué.</p>
+              <p class="price">120$</p>
+            </div> -->
+            <div class="collection">
+              <img src="./public/images/grid3.jpg" alt="">
+              <p class="title">the one</p>
+              <p class="description">Strapless midi dress. Contrast pleated fabric appliqué.</p>
+              <p class="price">120$</p>
             </div>
-            <div class="btn">Buy</div>
+            <div class="collection">
+              <img src="./public/images/grid4.jpg" alt="">
+              <p class="title">the one</p>
+              <p class="description">Strapless midi dress. Contrast pleated fabric appliqué.</p>
+              <p class="price">120$</p>
+            </div>
+          </div>
+        </div>
+       
+       
 
-        </div>`
+      </div>
+    <!--end of new products-->
 
-        })
-        document.querySelector(".products").innerHTML = res.join("")
-    }
-    allData()
-</script>    
-    
+    <!--end of website-->
+    <script src="./node_modules/swiper/swiper-bundle.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          spaceBetween: 0,
+          centeredSlides: true,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      </script>
+   
 </body>
 </html>

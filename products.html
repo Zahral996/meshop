@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me Shop</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="./public/images/logosmile.png">
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logosearch">
+                <div class="logomenu">
+                    <img class="logo" src="./public/images/logo-no-background.png" alt="">
+                    <div class="mobilemenu"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                      </svg></div>
+                </div>
+                <div class="search">
+                    <input type="text" placeholder="Search on Me Shop">
+                    <button><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#60EFB8" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                      </svg></button>
+                </div>
+            </div>
+            <div class="profile">
+                <button>
+                    Hello, Signe in  <p style="font-weight: bold;display: block;">Accounts & Lists</p>
+                </button>
+                <button>
+                    Returns <span style="font-weight: bold;display: block;">& Orders</span>
+
+                </button>
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#204969" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                      </svg>
+                      <span style="display: block; font-weight: bold;">Cart</span>
+
+                </button>
+                
+            </div>
+        </div>
+        <nav>
+            <div class="navigation">
+                <a class="item i1" href="#"><span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                  </svg></span>All</a>
+                <a class="item" href="#">Today's Deal</a>
+                <a class="item" href="#">Customer Service</a>
+                <a class="item" href="#">Registry</a>
+                <a class="item" href="#">Gift Cards</a>
+                <a class="item" href="#">Sell</a>
+                <a class="item" href="#">About Us</a>
+                <a class="item" href="#">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+    <div class="products">
+
+    </div>
+
+
+<script>
+    async function allData(){
+        let data = await fetch("https://fakestoreapi.com/products");
+        let dataget = await data.json()
+        let res = await dataget.map((item)=>{
+            return `  <div class="product">
+            <h2>${item.title}</h2>
+            <img src="${item.image}" alt="">
+            <p>${item.description}</p>
+            <div class="price">price:${item.price}</div>
+            <p>category:${item.category}</p>
+            <div class="rate">
+                <span>rate:${item.rating.rate}</span>
+                <span>count:${item.rating.count}</span>
+            </div>
+            <div class="btn">Buy</div>
+
+        </div>`
+
+        })
+        document.querySelector(".products").innerHTML = res.join("")
+    }
+    allData()
+</script>    
+    
+</body>
+</html>
